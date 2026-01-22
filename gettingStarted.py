@@ -1,14 +1,33 @@
 ### welcome_assignment_answers
 ### Input - All nine questions given in the assignment.
 ### Output - The right answer for the specific question.
+import hashlib
+
+email = "dt2993@nyu.edu"
+# Hashing algorithms require bytes, so we encode the string first
+hash_object = hashlib.sha256(email.encode())
+hex_dig = hash_object.hexdigest()
 
 def welcome_assignment_answers(question):
     #Students do not have to follow the skeleton for this assignment.
     #Another way to implement is using a "case" statements similar to C.
     if question == "Are encoding and encryption the same? - Yes/No":
-        answer = "The student should type the answer here"
+        answer = "No"
     elif question == "Is it possible to decrypt a message without a key? - Yes/No":
-        answer = "The student should type the answer here"
+        answer = "Yes"
+    elif question == "Is it possible to decode a message without a key? - Yes/No":
+        answer = "No"
+    elif question == "Is a hashed message supposed to be un-hashed? - Yes/No":
+        answer = "No"
+    elif question == "What is the SHA256 hashing value of your NYU email and use the answer in your code - ":
+        answer = hex_dig
+    elif question == "Is MD5 a secured hashing algorithm? - Yes/No":
+        answer = "No"
+    elif question == "What layer of the TCP/IP model does the protocol DNS belong to? - The answer should be an integer number":
+        answer = 5
+    elif question == "What layer of the TCP/IP model does the protocol ICMP belong to? - The answer should be an integer number":
+        answer = 3
+
     else: 
         ### you should understand why this else case should be included
         ### what happens if there is a typo in one of the questions?
